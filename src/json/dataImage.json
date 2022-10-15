@@ -43,5 +43,32 @@
     "category": "Maison",
     "link_image": "src/image/winivan-farm.jpeg",
     "alt":"winivan-farm"
+  },
+  {
+    "id": 6,
+    "titre": "lenox",
+    "prix": "$350",
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "Maison",
+    "link_image": "src/image/lenox.jpeg",
+    "alt":"lenox"
+  },
+  {
+    "id": 7,
+    "titre": "canoe",
+    "prix": "$109",
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "Bateau",
+    "link_image": "src/image/canoe.jpeg",
+    "alt":"canoe"
+  },
+  {
+    "id": 8,
+    "titre": "finger-lakes",
+    "prix": "$450",
+    "description": "Easy upgrade for faster boot up, shutdown, application load and response (As compared to 5400 RPM SATA 2.5” hard drive; Based on published specifications and internal benchmarking tests using PCMark vantage scores) Boosts burst write performance, making it ideal for typical PC workloads The perfect balance of performance and reliability Read/write speeds of up to 535MB/s/450MB/s (Based on internal testing; Performance may vary depending upon drive capacity, host device, OS and application.)",
+    "category": "nature",
+    "link_image": "src/image/finger-lakes.jpeg",
+    "alt":"finger-lakes"
   }
 ]

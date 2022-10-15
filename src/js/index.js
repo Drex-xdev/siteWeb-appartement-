@@ -1,43 +1,36 @@
 let table_image = [];
 
-// --------------------------------fetch json ----------------------------------
-fetch("src/json/dataImage.json").then((para1)=> para1.json()).then((para2)=> {
-    // table_image.push(para2[0].link_image)
-    table_image =para2[0].link_image;
-})
-
-// fetch("src/json/dataImage.json").then((pull)=> pull.json()).then((data)=>console.log(data[0].image));
-
 //-----------------------------tout le Selecteur ---------------------------------------
-const img_box = document.getElementsByClassName("img-box");
-
-// --------------------------------tout les Event Listener----------------------------------
-
+const art_box = document.querySelectorAll(".art-box");
 
 // --------------------------------code ----------------------------------
-console.log("tab: "+table_image)
-console.log(table_image)
+
+async function fetchImage(){
+    await fetch("src/json/dataImage.json")
+        .then((para1)=> para1.json())
+        .then((para2)=> {
+            table_image = para2;
+        })
+
+    let i =-1;
+    art_box.forEach((el)=>{
+        
+        el.addEventListener('click', (enfant)=>{
+            
+            // console.log(enfant)
+        })
+        
+        i++;
+        el.children[0].innerHTML =  `<img src="${table_image[i].link_image}"  alt="${table_image[i].alt}">`;
+        el.children[1].textContent= table_image[i].titre;
+        el.children[2].textContent= table_image[i].prix;
+        el.children[3].children[0].textContent= table_image[i].category;
+        console.log()
+    })
+}
+
+fetchImage();
+
+
 
 // const lisDesEnfantZoneDajoutDesTache = Array.from( ZoneDajoutDesTache.children);
-// console.log(data[0].link_image)
-/*
-(async ()=>{
-    await fetch('src/json/dataImage.json')
-        .then((para1) => para1.json())
-        .then((para2) => {
-            img =para2[0].image;
-            category=para2[0].category ;
-            titre=para2[0].title;
-            prix=para2[0].price;
-            description=para2[0].description;
-            stock=para2[0].rating.count;
-
-        });
-
-    img_box[0].innerHTML =`<img src="${img}" >`;
-    nonDeLaCategorie[0].textContent= category;
-    titreDeLaCategorie[0].textContent= titre;
-    prixDeLaCategorie[0].textContent= prix;
-    descriptionDeLaCategorie[0].textContent= description;
-    stockDeLaCategorie[0].textContent= stock+" RST";
-})();*/
