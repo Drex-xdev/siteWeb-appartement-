@@ -31,6 +31,15 @@ async function fetchImage(){
 
 fetchImage();
 
+/*var btnvar3 = document.getElementById('btnh3');
+function Toggle1(){
+    if (btnvar3.style.color =="red") {
+        btnvar3.style.color = "grey"
+    }
+    else{
+        btnvar3.style.color = "red"
+    }
+}*/
 
 
 // const lisDesEnfantZoneDajoutDesTache = Array.from( ZoneDajoutDesTache.children);
