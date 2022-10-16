@@ -1,0 +1,33 @@
+import { render } from "./render.mjs"
+
+/**
+ * function qui permet d afficher les photos
+ * @params {arrayOfPhotos} []
+ * @return {render}
+ */
+export function displayPhoto(arrayOfPhotos){
+
+    let photoHTML = ""
+
+    arrayOfPhotos.forEach((arrayOfPhoto)=>{
+
+        photoHTML +=`
+
+        <div class="main-paysage-information">
+        <img src="/apk-capt4/photographers/img/${arrayOfPhoto.portrait}" alt="${arrayOfPhoto.name}">
+        <div class="main-paysage-information-details">
+            <h4>${arrayOfPhoto.name}</h4>
+            <div class="heart-likes">    
+                 <img src="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pg0KPCEtLSBHZW5lcmF0b3I6IEFkb2JlIElsbHVzdHJhdG9yIDE5LjAuMCwgU1ZHIEV4cG9ydCBQbHVnLUluIC4gU1ZHIFZlcnNpb246IDYuMDAgQnVpbGQgMCkgIC0tPg0KPHN2ZyB2ZXJzaW9uPSIxLjEiIGlkPSJDYXBhXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNTEyIDUxMiIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNTEyIDUxMjsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxwYXRoIGQ9Ik00NzQuNjQ0LDc0LjI3QzQ0OS4zOTEsNDUuNjE2LDQxNC4zNTgsMjkuODM2LDM3NiwyOS44MzZjLTUzLjk0OCwwLTg4LjEwMywzMi4yMi0xMDcuMjU1LDU5LjI1DQoJCQljLTQuOTY5LDcuMDE0LTkuMTk2LDE0LjA0Ny0xMi43NDUsMjAuNjY1Yy0zLjU0OS02LjYxOC03Ljc3NS0xMy42NTEtMTIuNzQ1LTIwLjY2NWMtMTkuMTUyLTI3LjAzLTUzLjMwNy01OS4yNS0xMDcuMjU1LTU5LjI1DQoJCQljLTM4LjM1OCwwLTczLjM5MSwxNS43ODEtOTguNjQ1LDQ0LjQzNUMxMy4yNjcsMTAxLjYwNSwwLDEzOC4yMTMsMCwxNzcuMzUxYzAsNDIuNjAzLDE2LjYzMyw4Mi4yMjgsNTIuMzQ1LDEyNC43DQoJCQljMzEuOTE3LDM3Ljk2LDc3LjgzNCw3Ny4wODgsMTMxLjAwNSwxMjIuMzk3YzE5LjgxMywxNi44ODQsNDAuMzAyLDM0LjM0NCw2Mi4xMTUsNTMuNDI5bDAuNjU1LDAuNTc0DQoJCQljMi44MjgsMi40NzYsNi4zNTQsMy43MTMsOS44OCwzLjcxM3M3LjA1Mi0xLjIzOCw5Ljg4LTMuNzEzbDAuNjU1LTAuNTc0YzIxLjgxMy0xOS4wODUsNDIuMzAyLTM2LjU0NCw2Mi4xMTgtNTMuNDMxDQoJCQljNTMuMTY4LTQ1LjMwNiw5OS4wODUtODQuNDM0LDEzMS4wMDItMTIyLjM5NUM0OTUuMzY3LDI1OS41NzgsNTEyLDIxOS45NTQsNTEyLDE3Ny4zNTENCgkJCUM1MTIsMTM4LjIxMyw0OTguNzMzLDEwMS42MDUsNDc0LjY0NCw3NC4yN3ogTTMwOS4xOTMsNDAxLjYxNGMtMTcuMDgsMTQuNTU0LTM0LjY1OCwyOS41MzMtNTMuMTkzLDQ1LjY0Ng0KCQkJYy0xOC41MzQtMTYuMTExLTM2LjExMy0zMS4wOTEtNTMuMTk2LTQ1LjY0OEM5OC43NDUsMzEyLjkzOSwzMCwyNTQuMzU4LDMwLDE3Ny4zNTFjMC0zMS44MywxMC42MDUtNjEuMzk0LDI5Ljg2Mi04My4yNDUNCgkJCUM3OS4zNCw3Mi4wMDcsMTA2LjM3OSw1OS44MzYsMTM2LDU5LjgzNmM0MS4xMjksMCw2Ny43MTYsMjUuMzM4LDgyLjc3Niw0Ni41OTRjMTMuNTA5LDE5LjA2NCwyMC41NTgsMzguMjgyLDIyLjk2Miw0NS42NTkNCgkJCWMyLjAxMSw2LjE3NSw3Ljc2OCwxMC4zNTQsMTQuMjYyLDEwLjM1NGM2LjQ5NCwwLDEyLjI1MS00LjE3OSwxNC4yNjItMTAuMzU0YzIuNDA0LTcuMzc3LDkuNDUzLTI2LjU5NSwyMi45NjItNDUuNjYNCgkJCWMxNS4wNi0yMS4yNTUsNDEuNjQ3LTQ2LjU5Myw4Mi43NzYtNDYuNTkzYzI5LjYyMSwwLDU2LjY2LDEyLjE3MSw3Ni4xMzcsMzQuMjdDNDcxLjM5NSwxMTUuOTU3LDQ4MiwxNDUuNTIxLDQ4MiwxNzcuMzUxDQoJCQlDNDgyLDI1NC4zNTgsNDEzLjI1NSwzMTIuOTM5LDMwOS4xOTMsNDAxLjYxNHoiLz4NCgk8L2c+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8Zz4NCjwvZz4NCjxnPg0KPC9nPg0KPGc+DQo8L2c+DQo8L3N2Zz4NCg==" width="12"/>
+                <span>${arrayOfPhoto.likes}k</span>
+            </div>
+        </div>   
+    </div>
+           
+        
+        `
+    })
+    return render(document.querySelector(".main-paysage"),photoHTML)
+
+
+}
