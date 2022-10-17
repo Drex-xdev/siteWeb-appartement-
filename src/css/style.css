@@ -1,0 +1,239 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: DM Sans;
+}
+#bloc-page {
+  padding-left: 100px;
+  padding-right: 100px;
+}
+
+.header {
+  background-color: #ffe3d4;
+  padding-top: 20px;
+  padding-left: 50px;
+  padding-right: 70px;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sous-nav1 {
+  display: flex;
+  gap: 80px;
+  align-items: center;
+}
+.sous-nav-bloc1 {
+  display: flex;
+  gap: 20px;
+}
+.sous-nav-bloc2 {
+  display: flex;
+  gap: 20px;
+}
+.sous-nav2 {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+.logo {
+  font-weight: bold;
+  font-size: 25px;
+}
+.photo-profil {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
+  object-fit: cover;
+}
+.header-title {
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header-title1 {
+  font-size: 40px;
+}
+
+.header-title2 {
+  font-size: 20px;
+}
+
+/****fin du header****/
+/***corps de la page***/
+
+.main {
+  padding-left: 50px;
+  padding-left: 50px;
+}
+
+.select {
+  display: inline-flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.flt {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.btn-flt {
+  border: 1px solid #f3f3f3;
+  border-radius: 50px;
+  margin: 0 5px;
+  padding: 5px 15px;
+}
+
+.btn-flt:hover {
+  background-color: #f3f3f3;
+}
+.main-paysage {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 20px;
+}
+
+.main-paysage-information {
+  width: 285px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-paysage-information h4 {
+  margin: 0px;
+  margin-top: 20px;
+}
+
+.art-box-prg {
+  padding-top: 0%;
+}
+
+.main-paysage-information-image {
+  width: 100%;
+  height: 190px;
+  cursor: pointer;
+}
+
+.main-paysage-information-image img {
+  width: 100%;
+  display: inline-block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  transition: transform ease 0.4s, box-shadow ease 0.4s;
+}
+
+.main-paysage-information-image img:hover {
+  border: none;
+  outline: none;
+  transform: translate3d(0, -7px, 0);
+  box-shadow: 1px 13px 24px -22px rgba(0, 0, 0, 0.9);
+}
+
+.main-paysage-information p {
+  font-size: 13px;
+  margin-top: 0px;
+}
+
+.heart-likes {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.heart-likes img {
+  height: 100%;
+  background-color: bleu;
+}
+
+.heart-likes img:hover {
+  transition: 0.1s;
+  transform: translate3d(0, -3px, 0);
+}
+
+.ft-icon-box {
+  height: 100%;
+  display: flex;
+}
+
+.ft-box {
+  height: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.ft-box p {
+  margin: 0px;
+  font-size: medium;
+}
+
+.ft-icon {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.ft-icon span {
+  font-size: 15px;
+  margin-left: 5px;
+}
+
+/* ----- footer ------- */
+
+footer {
+  background-color: #ffe3d4;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-part {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contain {
+  width: 1200px;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 25px;
+}
+
+.navbar {
+  list-style-type: none;
+  display: inline-flex;
+  margin-left: 20px;
+}
+
+.navbar li {
+  padding: 0 15px;
+}
+
+.footbar li {
+  padding: 0 0 0 30px;
+}
